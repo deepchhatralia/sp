@@ -25,11 +25,13 @@ x.age = 22
 console.log(x.name)     // John
 
 
+// if we set a property using definePropertie than by default writable and enumerable descriptor is set to false
+
 // this function is used so that we can set specific property descriptor (ex. read only , not show a property in 'for in' loop) 
 Object.defineProperty(x, "email", {
     value: "x@gmail.com",
-    writable: false,
-    enumerable: false,
+    // writable: false,
+    // enumerable: false,
     // get() {
     //     return this.id;
     // }
@@ -59,7 +61,6 @@ Object.defineProperties(newObj, {
 })
 console.log(newObj)
 
-
 const a = {
     pid: 1,
     name: "Laptop",
@@ -70,7 +71,7 @@ for (let [key, value] of Object.entries(a)) {
     console.log(key, value)
 }
 
-// it wont allow addition or deletion of any properties
+// it wont allow addition or deletion of any properties or modifying of existing properties
 Object.freeze(a);
 a.occupation = "intern"     // wont add
 delete a.pid                // wont delete
@@ -78,9 +79,9 @@ console.log(a)
 
 
 // only takes index 0 as key and index 1 as value, other values in array are ignored
-const tempArr = [["id", 1], ["name", "pratik", "age", 21], ["email", "pratik@gmail.com"]]
+const tempArr = [["id", 1], [["first", "name"], "pratik", "age", 21], ["email", "pratik@gmail.com"]]
 const arr2 = Object.fromEntries(tempArr)
-console.log(arr2)
+console.log("Object created from array :", arr2)
 
 const arr3 = arr2
 
@@ -89,3 +90,34 @@ const arr3 = arr2
 console.log(Object.is(arr2, arr3))
 
 
+console.log("Get 'email' property descriptor of x object : ", Object.getOwnPropertyDescriptor(x, "email"))
+
+console.log("Get own property descriptors of newObj : ", Object.getOwnPropertyDescriptors(newObj))
+
+console.log("Get own property names of newObj : ", Object.getOwnPropertyNames(newObj))
+
+console.log("Own property symbols:", Object.getOwnPropertySymbols(newObj))
+
+console.log("Is frozen (x):", Object.isFrozen(x))
+console.log("Is frozen (a) :", Object.isFrozen(a))
+
+// true - can add new properties into object if not frozen or sealed
+console.log("a is is extensible:", Object.isExtensible(a))
+
+
+
+
+const sealObj = {
+    id: 120,
+    name: "Mary",
+    email: "mary@gmail.com"
+}
+Object.seal(sealObj)
+sealObj.id = 122    // allowed
+console.log("Seal Obj:", sealObj)
+
+
+console.log("sealObj is Sealed ?? :", Object.isSealed(sealObj))
+
+Object.setPrototypeOf(a, Object.prototype)
+console.log(Object.getPrototypeOf(a))
