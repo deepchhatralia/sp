@@ -118,6 +118,3 @@ console.log("Seal Obj:", sealObj)
 
 
 console.log("sealObj is Sealed ?? :", Object.isSealed(sealObj))
-
-Object.setPrototypeOf(a, Object.prototype)
-console.log(Object.getPrototypeOf(a))
