@@ -18,11 +18,11 @@ const input = [1, 2, 2, 3, 4, 4, 5];
 
 // optimized 
 
-input.sort()
+input.sort();
 
-let size = 0
+let size = 0;
 
-const ans = []
+const ans = [];
 
 while (size < input.length) {
     if (input[size] !== input[size + 1]) {
