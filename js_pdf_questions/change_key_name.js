@@ -13,7 +13,6 @@ console.log("Renamed :", obj)
 
 
 
-
 // let map = new Map(Object.entries(obj))
 
 // for (let key in renameKey) {
