@@ -59,3 +59,6 @@ console.log("Reduce : " + str.reduceRight((acc, curr) => acc + curr, ""))
 // myMap(arr, (val) => val + 100)
 // console.log("My map : " + arr)
 
+console.log([1, 2, 3, 4, 5].map(val => {
+    if (val % 2 !== 0) return val * 2
+}))

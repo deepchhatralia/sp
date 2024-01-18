@@ -25,7 +25,7 @@ x.age = 22
 console.log(x.name)     // John
 
 
-// if we set a property using definePropertie than by default writable and enumerable descriptor is set to false
+// if we set a property using defineProperty than by default writable and enumerable descriptor is set to false
 
 // this function is used so that we can set specific property descriptor (ex. read only , not show a property in 'for in' loop) 
 Object.defineProperty(x, "email", {
@@ -95,8 +95,6 @@ console.log("Get 'email' property descriptor of x object : ", Object.getOwnPrope
 console.log("Get own property descriptors of newObj : ", Object.getOwnPropertyDescriptors(newObj))
 
 console.log("Get own property names of newObj : ", Object.getOwnPropertyNames(newObj))
-
-console.log("Own property symbols:", Object.getOwnPropertySymbols(newObj))
 
 console.log("Is frozen (x):", Object.isFrozen(x))
 console.log("Is frozen (a) :", Object.isFrozen(a))

@@ -1,6 +1,6 @@
 const str = "Hello World! Hey Universe Universe";
 const temp = "     trim example   "
-
+console.log(`hello ${temp}`)
 console.log("String : " + str)
 
 console.log("Length : " + str.length)
