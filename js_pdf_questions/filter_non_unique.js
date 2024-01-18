@@ -25,14 +25,27 @@ let size = 0;
 
 const ans = [];
 
-while (size < input.length) {
-    if (input[size] !== input[size + 1]) {
-        ans.push(input[size])
+for (let i = 0; i < input.length; i++) {
+    if (input[i] !== input[i + 1]) {
+        ans.push(input[i])
     }
-    while (input[size] === input[size + 1]) {
-        size++;
+
+    for (let j = i; j < input.length; j++) {
+        if (input[j] !== input[j + 1]) {
+            i = j;
+            break;
+        }
     }
-    size++;
 }
+
+// while (size < input.length) {
+//     if (input[size] !== input[size + 1]) {
+//         ans.push(input[size])
+//     }
+//     while (input[size] === input[size + 1]) {
+//         size++;
+//     }
+//     size++;
+// }
 
 console.log(ans)
