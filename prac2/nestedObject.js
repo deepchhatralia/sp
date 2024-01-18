@@ -36,8 +36,8 @@ let nestedObject = {
 //     }
 // })
 
-nestedObject.addSpeaker = function (obj) {
-    this.speakers.push(obj)
+nestedObject.addSpeaker = (obj) => {
+    this.nestedObject.speakers.push(obj)
 }
 
 nestedObject.addSpeaker({ name: "Deep" })
@@ -47,8 +47,8 @@ nestedObject.addLanguage = function (langName, langObj) {
 }
 nestedObject.addLanguage('English', { hello: 'hi' })
 
-nestedObject.addCountry = function (countryName, countryObj) {
-    this.data.continents.europe.countries[countryName] = countryObj;
+nestedObject.addCountry = (countryName, countryObj) => {
+    nestedObject.data.continents.europe.countries[countryName] = countryObj;
 }
 nestedObject.addCountry("France", { capital: "Paris", population: 1000000 })
 

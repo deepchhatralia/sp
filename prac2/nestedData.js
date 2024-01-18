@@ -4,6 +4,7 @@
 // Invoke the addSnack function and add the snack "chocolate".
 // Inside of the addSnack function there is a special keyword called this.What does the word this refer to inside the addSnack function?
 
+
 let nestedData = {
     innerData: {
         order: ["first", "second", "third"],
